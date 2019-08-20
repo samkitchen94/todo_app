@@ -18,7 +18,7 @@ class App extends Component {
       {
         id: 3,
         title: 'Go to meetups',
-        completed: true
+        completed: false
       },
     ]
   }
