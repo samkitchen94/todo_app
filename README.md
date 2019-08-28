@@ -10,7 +10,7 @@ I learnt a lot about styling and CSS during this project. I also learnt a lot ab
 This project uses a fake REST API from [https://jsonplaceholder.typicode.com], to explore how this user interface could interact with a backend server that contains todos. Using this I learnt a lot about get, post and delete responses using [Axios](https://github.com/axios/axios), a promise based HTTP client that can be used in both the browser and node.js. Another really helpful tool that I'll be using again! 
 
 ## Next Steps
-Now that I've refreshed myself on the basics I'll be looking to add my own back end server in this, with a database to store todos etc. I'll probably try and use a database I haven't used before such as Firebase or Mongo DB for this, as well as node.js for the back end. 
+Now that I've refreshed myself on the basics I'll be looking to add my own back end server in this, with a database to store todos etc. I'll probably try and use a database I haven't used before such as Firebase or Mongo DB for this, as well as node.js for the back end. I'll probably try and add some testing using Jest and deploy it on heroku.
 
 
 ## Available Scripts
