@@ -9,27 +9,18 @@ import uuid from 'uuid';
 
 
 import './App.css';
+import axios from 'axios';
 
 class App extends Component {
   state = {
-    todos: [
-      {
-        id: uuid.v4(),
-        title: 'Get a job',
-        completed: false
-      },
-      {
-        id: uuid.v4(),
-        title: 'Buy Hayley flowers',
-        completed: false
-      },
-      {
-        id: uuid.v4(),
-        title: 'Go to meetups',
-        completed: false
-      },
-    ]
+    todos: []
   }
+
+  componentDidMount() {
+    axios.get('https://jsonplaceholder.typicode.com/todos')
+      .then(res => console.log(res.data))
+  }
+
 // Mark as complete
   markComplete = (id) => {
     this.setState({ todos: this.state.todos.map(todo => {
