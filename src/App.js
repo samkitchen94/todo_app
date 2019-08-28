@@ -31,19 +31,21 @@ class App extends Component {
     }) });
   }
 
-// Delete todo
+// Delete todo - always use back ticks when deleting from backend server
+// Returns a promise (.then) with which we tell it what to do - deletes it on server .then updates user interface
+
   deleteTodo = (id) => {
-    this.setState({todos: [...this.state.todos.filter(todo => todo.id !== id )] })
+    axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+      .then(res => this.setState({todos: [...this.state.todos.filter(todo => todo.id !== id )] }));
   }
 
 // Add Todo
   addTodo = (title) => {
-    const newTodo = {
-      id: uuid.v4(),
+    axios.post('https://jsonplaceholder.typicode.com/todos', {
       title,
       completed: false
-    }
-    this.setState({ todos: [...this.state.todos, newTodo] });
+    })
+      .then(res => this.setState({ todos: [...this.state.todos, res.data] }));
   }
 
   render() {
